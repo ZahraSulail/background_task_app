@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">صحتك تهمنا</string>
+    <string name="times_notified_today">تنبيهات اليوم</string>
+    <string name="weekly_avg">معد الأسبوع</string>
+    <string name="daily_data">البيانات اليومية</string>
+    <string name="day">اليوم</string>
+
+    <string name="screen_state_channel_name">حالة الشاشة</string>
+    <string name="screen_state_channel_description">قناة اشعارات تستخدم لارسال اشعار كل ٢٥ دقيقة من استخدام جهاز الموبايل</string>
+    <string name="format_notification" formatted="true">
+        قضيت وقتا طويلا على الجهاز قم ببعض التمارين للنشاط
+    </string>
+    <string name="boot_notification">Sync notification</string>
+    <string name="Boot_Channel_name">Boot_Channel_name</string>
+    <string name="Boot_Channel_Description">Device is booted</string>
+
+</resources>

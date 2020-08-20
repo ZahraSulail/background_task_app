@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">We Care</string>
+    <string name="times_notified_today">Today\'s Notifications</string>
+    <string name="default_number_04" translatable="false">04</string>
+    <string name="weekly_avg">Weekly Average</string>
+    <string name="default_number_03" translatable="false">03</string>
+    <string name="daily_data">Daily Data</string>
+    <string name="day">Day</string>
+    
+    <string name="screen_state_channel_name">Screen State</string>
+    <string name="screen_state_channel_description">Notification channel used to display notification while user used the device more than 25 munits</string>
+    <string name="format_notification" formatted="true">You spent more time on device move to do Exercices</string>
+    <string name="boot_notification">Sync notification</string>
+    <string name="Boot_Channel_name">Boot_Channel_name</string>
+    <string name="Boot_Channel_Description">Device is booted</string>
+
+    <string-array name="dates">
+        <item>01/01/2019</item>
+        <item>01/02/2019</item>
+        <item>01/03/2019</item>
+        <item>01/04/2019</item>
+        <item>01/05/2019</item>
+        <item>01/06/2019</item>
+    </string-array>
+</resources>
