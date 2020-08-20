@@ -45,8 +45,8 @@ public abstract class AppDataBase extends RoomDatabase {
 /**
  * Return object of NotificationsDao to read, write, delete and update notificationsCount
  */
+public abstract NotificationsDao notificationsDao();
 
-    public abstract NotificationsDao notificationsDao();
 }
 
 

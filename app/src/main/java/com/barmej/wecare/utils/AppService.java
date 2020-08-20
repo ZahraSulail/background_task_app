@@ -11,10 +11,8 @@ import androidx.annotation.Nullable;
 
 public class AppService extends Service {
     public static final String TAG = AppService.class.getSimpleName();
-
+    // ScreenReceiver object
     ScreenStateReceiver screenOnOffReceiver;
-
-
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -22,7 +20,6 @@ public class AppService extends Service {
     public AppService() {
 
     }
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -43,7 +40,6 @@ public class AppService extends Service {
         super.onDestroy();
         Log.i(TAG, "unRegisterReceiver");
         unregisterReceiver(screenOnOffReceiver);
-
     }
 
     @Nullable
@@ -51,13 +47,13 @@ public class AppService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-
+/*
+  register method to register the OnOfReceiver
+ */
     private void registerScreenOnOffReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(screenOnOffReceiver, filter);
     }
-
-
 }

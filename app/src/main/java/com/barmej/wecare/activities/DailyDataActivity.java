@@ -20,28 +20,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DailyDataActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+    /*
+      Define required variables
+     */
     private Spinner dataSpinner;
     private TextView notificationsTextView;
     private List<Notifications> items;
-
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_data);
-
+        /*
+          Designate the Views to the variables
+         */
         notificationsTextView = findViewById(R.id.text_vew_notifications_count);
         dataSpinner = findViewById(R.id.spinner);
-
+        /*
+          ArrayList object
+         */
         items = new ArrayList<>();
+        /*
+          Set the spinner to the array adapter
+         */
         final ArrayAdapter<Notifications> adapter = new ArrayAdapter<Notifications>(this, android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dataSpinner.setAdapter(adapter);
         dataSpinner.setOnItemSelectedListener(this);
 
+        /*
+          An observer on the database operations
+         */
         MainViewModel mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         mainViewModel.getAllNotifications().observe(this, new Observer<List<Notifications>>() {
           @Override
@@ -51,13 +60,11 @@ public class DailyDataActivity extends AppCompatActivity implements AdapterView.
              adapter.notifyDataSetChanged();
           }
       });
-
-
-
-
-
     }
 
+    /*
+      Set notificationCount to the textView
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
        Notifications notifications = items.get(position);
@@ -68,12 +75,7 @@ public class DailyDataActivity extends AppCompatActivity implements AdapterView.
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-
     }
-
-
-
-
-    }
+}
 
 

@@ -20,20 +20,26 @@ public class MainViewModel  extends AndroidViewModel {
         create AppDatabace object
          */
         mDatabase = AppDataBase.getInstance(application.getApplicationContext());
-
     }
 
+    /*
+       Get all notifications from database
+      */
     public LiveData<List<Notifications>> getAllNotifications(){
         return  mDatabase.notificationsDao().getAllNotifications();
     }
 
+    /*
+       Get notifications from database
+      */
     public  LiveData<Notifications> getNotifications(String date) {
         return mDatabase.notificationsDao().getNotification(date);
     }
 
+    /*
+           Get last 7  notifications from database
+     */
     public LiveData<List<Notifications>> getLastWeekNotifications(){
         return  mDatabase.notificationsDao().getLastWeekNotifications();
     }
-
-
 }
