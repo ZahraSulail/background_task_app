@@ -22,9 +22,8 @@ public class ScreenStateReceiver extends BroadcastReceiver {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
 
                 PeriodicWorkRequest myWorkRequest =
-                        new PeriodicWorkRequest.Builder(AppWorker.class, 5, TimeUnit.MINUTES)
-                                //.setInitialDelay(1, TimeUnit.MINUTES)
-                                // Constraints
+                        new PeriodicWorkRequest.Builder(AppWorker.class, 25, TimeUnit.SECONDS)
+                                .setInitialDelay(25, TimeUnit.MINUTES)
                                 .build();
                 WorkManager.getInstance(context).enqueue(myWorkRequest);
             }

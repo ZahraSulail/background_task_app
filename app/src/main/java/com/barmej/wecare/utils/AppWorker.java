@@ -42,6 +42,8 @@ public class AppWorker extends Worker {
             notifications = new Notifications(1, today);
             appDataBase.notificationsDao().addNotifications(notifications);
         }
+
+        NotificationsUtils.showScreeenStateNotification(getApplicationContext());
         return Result.success();
     }
 }

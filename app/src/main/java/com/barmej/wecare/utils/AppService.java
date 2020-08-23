@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 public class AppService extends Service {
     public static final String TAG = AppService.class.getSimpleName();
+
     // ScreenReceiver object
     ScreenStateReceiver screenOnOffReceiver;
 
@@ -51,6 +52,7 @@ public class AppService extends Service {
   register method to register the OnOfReceiver
  */
     private void registerScreenOnOffReceiver() {
+        screenOnOffReceiver =  new ScreenStateReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_ON);
         filter.addAction(Intent.ACTION_SCREEN_OFF);

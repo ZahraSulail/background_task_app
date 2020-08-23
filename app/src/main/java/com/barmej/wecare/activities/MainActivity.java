@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         //Call createScreenStateChannel() method
         NotificationsUtils.createScreenStateChannel(this);
 
+
         /*
          Find views by Ids
          */
@@ -105,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 startDailyDataActivity();
             }
         });
+
+
 
         /*
           Start the foregroundService
