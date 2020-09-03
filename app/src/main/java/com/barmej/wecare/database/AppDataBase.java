@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = Notifications.class, version = 1)
+@Database(entities = Notifications.class, version = 2)
 public abstract class AppDataBase extends RoomDatabase {
     /*
     Instance of this class for singlton
@@ -36,7 +36,9 @@ public abstract class AppDataBase extends RoomDatabase {
                         context.getApplicationContext(),
                         AppDataBase.class,
                         AppDataBase.DATABASE_NAME
-                ).build();
+
+                ).fallbackToDestructiveMigration()
+                        .build();
             }
         }
         return sInstance;

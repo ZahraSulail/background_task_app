@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "notifications")
 public class Notifications {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     private int notificationsCount;
